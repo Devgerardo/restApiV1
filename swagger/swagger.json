@@ -1,0 +1,856 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "beego Test API",
+        "description": "beego has a very cool tools to autogenerate documents for your API",
+        "version": "1.0.0",
+        "termsOfService": "http://beego.me/",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/estado_soporte_plan_trabajo/": {
+            "get": {
+                "tags": [
+                    "estado_soporte_plan_trabajo"
+                ],
+                "description": "get EstadoSoportePlanTrabajo",
+                "operationId": "EstadoSoportePlanTrabajoController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoportePlanTrabajo"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "estado_soporte_plan_trabajo"
+                ],
+                "description": "create EstadoSoportePlanTrabajo",
+                "operationId": "EstadoSoportePlanTrabajoController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for EstadoSoportePlanTrabajo content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoportePlanTrabajo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.EstadoSoportePlanTrabajo"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/estado_soporte_plan_trabajo/{id}": {
+            "get": {
+                "tags": [
+                    "estado_soporte_plan_trabajo"
+                ],
+                "description": "get EstadoSoportePlanTrabajo by id",
+                "operationId": "EstadoSoportePlanTrabajoController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoportePlanTrabajo"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "estado_soporte_plan_trabajo"
+                ],
+                "description": "update the EstadoSoportePlanTrabajo",
+                "operationId": "EstadoSoportePlanTrabajoController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for EstadoSoportePlanTrabajo content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoportePlanTrabajo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.EstadoSoportePlanTrabajo"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "estado_soporte_plan_trabajo"
+                ],
+                "description": "delete the EstadoSoportePlanTrabajo",
+                "operationId": "EstadoSoportePlanTrabajoController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/organizacion/": {
+            "get": {
+                "tags": [
+                    "organizacion"
+                ],
+                "description": "get Organizacion",
+                "operationId": "OrganizacionController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Organizacion"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "organizacion"
+                ],
+                "description": "create Organizacion",
+                "operationId": "OrganizacionController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Organizacion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Organizacion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Organizacion"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/organizacion/{id}": {
+            "get": {
+                "tags": [
+                    "organizacion"
+                ],
+                "description": "get Organizacion by id",
+                "operationId": "OrganizacionController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Organizacion"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "organizacion"
+                ],
+                "description": "update the Organizacion",
+                "operationId": "OrganizacionController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Organizacion content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Organizacion"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Organizacion"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "organizacion"
+                ],
+                "description": "delete the Organizacion",
+                "operationId": "OrganizacionController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/persona/": {
+            "get": {
+                "tags": [
+                    "persona"
+                ],
+                "description": "get Persona",
+                "operationId": "PersonaController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Persona"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "persona"
+                ],
+                "description": "create Persona",
+                "operationId": "PersonaController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Persona content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Persona"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Persona"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/persona/{id}": {
+            "get": {
+                "tags": [
+                    "persona"
+                ],
+                "description": "get Persona by id",
+                "operationId": "PersonaController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Persona"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "persona"
+                ],
+                "description": "update the Persona",
+                "operationId": "PersonaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Persona content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Persona"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Persona"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "persona"
+                ],
+                "description": "delete the Persona",
+                "operationId": "PersonaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/solicitud_soporte_plan_trabajo/": {
+            "get": {
+                "tags": [
+                    "solicitud_soporte_plan_trabajo"
+                ],
+                "description": "get SolicitudSoportePlanTrabajo",
+                "operationId": "SolicitudSoportePlanTrabajoController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SolicitudSoportePlanTrabajo"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "solicitud_soporte_plan_trabajo"
+                ],
+                "description": "create SolicitudSoportePlanTrabajo",
+                "operationId": "SolicitudSoportePlanTrabajoController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for SolicitudSoportePlanTrabajo content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SolicitudSoportePlanTrabajo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.SolicitudSoportePlanTrabajo"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/solicitud_soporte_plan_trabajo/{id}": {
+            "get": {
+                "tags": [
+                    "solicitud_soporte_plan_trabajo"
+                ],
+                "description": "get SolicitudSoportePlanTrabajo by id",
+                "operationId": "SolicitudSoportePlanTrabajoController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SolicitudSoportePlanTrabajo"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "solicitud_soporte_plan_trabajo"
+                ],
+                "description": "update the SolicitudSoportePlanTrabajo",
+                "operationId": "SolicitudSoportePlanTrabajoController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for SolicitudSoportePlanTrabajo content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SolicitudSoportePlanTrabajo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.SolicitudSoportePlanTrabajo"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "solicitud_soporte_plan_trabajo"
+                ],
+                "description": "delete the SolicitudSoportePlanTrabajo",
+                "operationId": "SolicitudSoportePlanTrabajoController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.EstadoSoportePlanTrabajo": {
+            "title": "EstadoSoportePlanTrabajo",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "CodigoAbreviacion": {
+                    "type": "string"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                },
+                "NumeroOrden": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "models.Organizacion": {
+            "title": "Organizacion",
+            "type": "object",
+            "properties": {
+                "Ente": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                },
+                "TipoOrganizacion": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.Persona": {
+            "title": "Persona",
+            "type": "object",
+            "properties": {
+                "Ente": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "FechaNacimiento": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "Foto": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "PrimerApellido": {
+                    "type": "string"
+                },
+                "PrimerNombre": {
+                    "type": "string"
+                },
+                "SegundoApellido": {
+                    "type": "string"
+                },
+                "SegundoNombre": {
+                    "type": "string"
+                },
+                "Usuario": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SolicitudSoportePlanTrabajo": {
+            "title": "SolicitudSoportePlanTrabajo",
+            "type": "object",
+            "properties": {
+                "Actividad": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Anio": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Documento": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Estado": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Observaciones": {
+                    "type": "string"
+                },
+                "Organizacion": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Periodo": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Persona": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "organizacion",
+            "description": "OrganizacionController operations for Organizacion\n"
+        },
+        {
+            "name": "persona",
+            "description": "PersonaController operations for Persona\n"
+        },
+        {
+            "name": "solicitud_soporte_plan_trabajo",
+            "description": "SolicitudSoportePlanTrabajoController operations for SolicitudSoportePlanTrabajo\n"
+        },
+        {
+            "name": "estado_soporte_plan_trabajo",
+            "description": "EstadoSoportePlanTrabajoController operations for EstadoSoportePlanTrabajo\n"
+        }
+    ]
+}
